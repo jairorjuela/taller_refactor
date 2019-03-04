@@ -1,12 +1,17 @@
+require_relative 'saludar'
+
 class Bar
 
   TamanoVasos = { grande: "Vaso grande", mediano: "Vaso mediano", pequeno: "Vaso pequeño" }
   TipoPola = { roja: "Pola roja", rubia: "Pola Rubia", negra: "La mas deli: negrita" }
+  Saluda = BuenosDias::Saludar
 
-
+#Greet of client first
+  def saludar_al_cliente(nombre)
+    Saluda.(nombre)
+  end
 
   def pedir_cerveza(tipo, tamano)
-    saludar_al_cliente
     escoger_vaso(tamano)
     abrir_llave_de_cerveza_tipo(tipo)
     cobrar_por_la_pola(tipo, tamano)
@@ -14,9 +19,6 @@ class Bar
     puts "Disfrute su cerveza, buen día"
   end
 
-  def saludar_al_cliente
-    BuenosDias.new.saludar(nombre_barista)
-  end
 
   def escoger_vaso(tamano)
     puts "escogiendo un vaso para tu cerveza tamaño #{tamaño}"
@@ -50,11 +52,5 @@ class Bar
       costo = costo + 5000
     end
     puts "Serían #{costo} pesos por favor"
-  end
-end
-
-class BuenosDias
-  def saludar(nombre)
-    puts "Buenos días, mi nombre es #{nombre}"
   end
 end
