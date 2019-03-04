@@ -14,15 +14,11 @@ class Bar
   end
 
   def pedir_cerveza(tipo, tamano)
-    escoger_vaso(tamano)
+    Vaso.choose(tamano)
     abrir_llave_de_cerveza_tipo(tipo)
-    cobrar_por_la_pola(tipo, tamano)
+    cobrar_por_la_pola(tipo, Vaso.tamano(tamano))
 
     puts "Disfrute su cerveza, buen día"
-  end
-
-  def escoger_vaso(tamano)
-    Vaso.tamano(tamano)
   end
 
   def abrir_llave_de_cerveza_tipo(tipo)

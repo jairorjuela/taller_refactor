@@ -13,7 +13,13 @@ RSpec.describe Bar do
       expect(greet).to eq("Buenos días, mi nombre es jairo")
     end
 
-    it 'is include class "Vasos"' do
+    it 'is include method "choose"' do
+      glass = @glases
+      choose = glass.choose("grande")
+      expect(choose).to eq("escogiendo un vaso para tu cerveza tamaño grande")
+    end
+
+    it 'is include method "tamano"' do
       glass = @glases
       size = glass.tamano("grande")
       expect(size).to eq("escogiendo un vaso para tu cerveza tamaño grande")

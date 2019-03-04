@@ -6,17 +6,20 @@ class Vasos
     "pequeno" => "Vaso pequeño"
   }
 
-  def tamano(tamano)
+  def choose(tamano)
     opciones = {
       true => -> { "escogiendo un vaso para tu cerveza tamaño #{tamano}" },
-      false => -> { nuevo_tamano }
+      false => -> { "No tenemos esos tamaños de vasos, te daré uno grande" }
     }
     opciones[TamanoVasos.include?(tamano)].()
   end
 
-  def nuevo_tamano
-    tamano = "grande"
-    "No tenemos esos tamaños de vasos, te daré uno #{tamano}"
+  def tamano
+    opciones = {
+      true => -> { tamano },
+      false => -> { tamano = "grande" }
+    }
+    opciones[TamanoVasos.include?(tamano)].()
   end
 
 end
