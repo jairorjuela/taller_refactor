@@ -1,10 +1,12 @@
 require_relative 'saludar'
+require_relative 'vasos'
+
 
 class Bar
 
-  TamanoVasos = { grande: "Vaso grande", mediano: "Vaso mediano", pequeno: "Vaso pequeño" }
   TipoPola = { roja: "Pola roja", rubia: "Pola Rubia", negra: "La mas deli: negrita" }
   Saluda = BuenosDias::Saludar
+  Vaso = Vasos.new
 
 #Greet of client first
   def saludar_al_cliente(nombre)
@@ -19,10 +21,8 @@ class Bar
     puts "Disfrute su cerveza, buen día"
   end
 
-
   def escoger_vaso(tamano)
-    puts "escogiendo un vaso para tu cerveza tamaño #{tamaño}"
-    puts TamanoVasos.has_key?(tamano) ? TamanoVasos[tamano] : "No tenemos esos tamaños de vaso, te daré uno grande"
+    Vaso.tamano(tamano)
   end
 
   def abrir_llave_de_cerveza_tipo(tipo)
