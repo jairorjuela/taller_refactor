@@ -3,9 +3,7 @@ class Bar
   TamanoVasos = { grande: "Vaso grande", mediano: "Vaso mediano", pequeno: "Vaso pequeño" }
   TipoPola = { roja: "Pola roja", rubia: "Pola Rubia", negra: "La mas deli: negrita" }
 
-  def inicializar_bar(barista)
-    @barista = barista
-  end
+
 
   def pedir_cerveza(tipo, tamano)
     saludar_al_cliente
