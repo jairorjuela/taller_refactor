@@ -1,4 +1,4 @@
-require_relative "../bar"
+require_relative "../lib/bar"
 
 RSpec.describe Bar do
 
