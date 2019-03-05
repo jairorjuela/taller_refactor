@@ -1,6 +1,9 @@
 class Pola
+
   TipoPola = {
-    roja: "Pola roja", rubia: "Pola Rubia", negra: "La mas deli: negrita"
+    "roja" => "Pola roja",
+    "rubia" => "Pola Rubia",
+    "negra" => "La mas deli negrita"
   }
 
   def serve_beer(tipo)
@@ -19,9 +22,10 @@ class Pola
 
   def tipo(tipo)
     opciones = {
-      true => -> { tamano },
-      false => -> { tamano = "rubia" }
+      true => -> { tipo },
+      false => -> { tipo = "rubia" }
     }
-    opciones[TamanoVasos.include?(tamano)].()
+    opciones[TipoPola.include?(tipo)].()
   end
+
 end

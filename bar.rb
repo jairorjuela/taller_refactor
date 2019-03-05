@@ -8,7 +8,6 @@ class Bar
   Vaso = Vasos.new
   Cerveza = Pola.new
 
-#Greet of client first
   def saludar_al_cliente(nombre)
     Saluda.(nombre)
   end
