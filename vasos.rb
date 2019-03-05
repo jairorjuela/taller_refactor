@@ -14,7 +14,7 @@ class Vasos
     opciones[TamanoVasos.include?(tamano)].()
   end
 
-  def tamano
+  def tamano(tamano)
     opciones = {
       true => -> { tamano },
       false => -> { tamano = "grande" }
