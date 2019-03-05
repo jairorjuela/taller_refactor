@@ -3,9 +3,11 @@ require_relative "../bar"
 RSpec.describe Bar do
 
   before(:each) do
+    @bar = Bar.new
     @greet = BuenosDias::Saludar
     @glases = Vasos.new
     @beer = Pola.new
+    @invoice = Cobrando::Cobrar
   end
 
   describe "whe the input is correct" do
@@ -28,8 +30,15 @@ RSpec.describe Bar do
 
     it 'is include method "serve_beer"' do
       pola = @beer
-      tipo = pola.tipo("negra")
-      expect(tipo).to eq("negra")
+      type = pola.tipo("negra")
+      expect(type).to eq("negra")
+    end
+
+    it 'is include module "Cobrando"' do
+      type = @beer.tipo("negra")
+      size = @glases.tamano("grande")
+      cobra = @invoice.(size, type)
+      expect(cobra).to eq(10000)
     end
   end
 
